@@ -15,7 +15,7 @@ pipeline {
     // definition personal variable
     environment {
         // this is a func provided by jenkins and use for connect to the prod server to get artifacts
-        SERVER_CREDENTIALS = credentials('jenkins-example')
+        // SERVER_CREDENTIALS = credentials('jenkins-example')
         NEW_VERSION = '1.0.1'
     }
     stages {
@@ -49,15 +49,15 @@ pipeline {
                 // echo "deploying with credentials ${SERVER_CREDENTIALS}"
                 // sh "${SERVER_CREDENTIALS}"
                 // or use withCredentials
-                withCredentials([
-                    usernamePassword(
-                        credentialsId: 'jenkins-example',
-                        usernameVariable: USER,
-                        passwordVariable: PWD
-                    )
-                ]){
-                    sh "some script ${USER} ${PWD}"
-                }
+                // withCredentials([
+                //     usernamePassword(
+                //         credentialsId: 'jenkins-example',
+                //         usernameVariable: USER,
+                //         passwordVariable: PWD
+                //     )
+                // ]){
+                //     sh "some script ${USER} ${PWD}"
+                // }
                 echo "deploying version ${params.VERSION}"
             }
         }
