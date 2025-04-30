@@ -2,10 +2,10 @@
 pipline {
     agent any
     // the tools is used for build artifacts
-    tools {
-        // maven 'maven'
-        // jdk 'jdk11'
-    } 
+    // tools {
+    //     // maven 'maven'
+    //     // jdk 'jdk11'
+    // } 
 
     parameters {
         string(name: 'VERSION', defaultValue: '', description: 'version to deploy on prod')
@@ -33,11 +33,12 @@ pipline {
                     BRANCH_NAME == 'main' && CODE_CHANGE == true
                 }
             }
-            when {
-                expression {
-                    params.executeTests == true
-                }
-            }
+            // when close only can appear once in one stage bracket
+            // when {
+            //     expression {
+            //         params.executeTests == true
+            //     }
+            // }
             steps {
                 echo 'testing application'
             }
