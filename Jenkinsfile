@@ -24,7 +24,7 @@ pipeline {
                 echo 'building application'
                 // if use groovy , it may use ''
                 echo "new version is ${NEW_VERSION}"
-                sh 'mvn install'
+                // sh 'mvn install'
             }
         }
         stage('test') {
@@ -65,13 +65,13 @@ pipeline {
     post{
         always{
             // cleanup actions & send notification
-            echo 'pipeline completed'
+            echo 'always block pipeline completed'
         }
         success{
-            echo 'pipeline success'
+            echo 'succss block pipeline success'
         }
         failure{
-            echo 'pipeline failed'
+            echo 'failure block pipeline failed'
         }
     }
 }
