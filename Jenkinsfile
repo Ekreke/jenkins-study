@@ -28,11 +28,11 @@ pipeline {
             }
         }
         stage('test') {
-            when {
-                expression {
-                    BRANCH_NAME == 'main' && CODE_CHANGE == true
-                }
-            }
+            // when {
+            //     expression {
+            //         BRANCH_NAME == 'main' && CODE_CHANGE == true
+            //     }
+            // }
             // when close only can appear once in one stage bracket
             // when {
             //     expression {
