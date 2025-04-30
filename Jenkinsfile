@@ -1,4 +1,4 @@
-CODE_CHANGE = getGitChanges()
+// CODE_CHANGE = getGitChanges()
 pipline {
     agent any
     // the tools is used for build artifacts
