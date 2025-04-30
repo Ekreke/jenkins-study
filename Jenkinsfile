@@ -1,5 +1,5 @@
 // CODE_CHANGE = getGitChanges()
-pipline {
+pipeline {
     agent any
     // the tools is used for build artifacts
     tools {
